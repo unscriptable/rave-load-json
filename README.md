@@ -11,7 +11,7 @@ In HTML, this can be done by placing a `data-load-json` attribute on the
 list of extensions.
 
 ```html
-<html data-load-json="html,css">
+<html data-load-json="json,cfg">
 ```
 
 When running `rave()` as a module, the `loadText` property may also be
