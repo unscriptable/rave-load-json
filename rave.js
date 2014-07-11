@@ -18,6 +18,7 @@ function create (context) {
 			{
 				extensions: extensions,
 				hooks: {
+					locate: locate,
 					instantiate: instantiateJson
 				}
 			}
@@ -25,3 +26,10 @@ function create (context) {
 	};
 
 }
+
+function locate (load) {
+	var metadata = load.metadata;
+	metadata.dontAddExt = true;
+	return false;
+}
+
