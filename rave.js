@@ -9,9 +9,9 @@ exports.create = create;
 
 function create (context) {
 	// override extensions if supplied by dev
-	var extensions = 'loadJson' in context
-		? context.loadJson
-		: defaultExtensions;
+	var env = context.env;
+	var extensions = (env.loadJson && env.loadJson.extensions)
+		|| defaultExtensions;
 
 	return {
 		load: [

@@ -5,20 +5,20 @@ Adds json loading to rave.js based on file extensions.
 By default, rave-load-json loads json when it detects a '.json' file
 extension.
 
-You can change this list by adding a `loadJson` property to the context.
-In HTML, this can be done by placing a `data-load-json` attribute on the
-`<html>` element.  The value of this element should be a comma-separated
-list of extensions.
-
-```html
-<html data-load-json="json,cfg">
-```
-
-When running `rave()` as a module, the `loadText` property may also be
-an array of extensions or an object whose keys are file extensions.
+You can change this list by adding a `loadJson` rave env property.
+For example, to detect ".json" and ".config"
+extensions, add the following to your app's bower.json or package.json:
 
 ```js
-context.loadJson = ['json', 'cfg'];
+{
+	"rave": {
+		"env": {
+			"loadJson": {
+				"extensions": [ "json", "config" ]
+			}
+		}
+	}
+}
 ```
 
 ## Usage
